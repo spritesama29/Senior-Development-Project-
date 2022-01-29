@@ -1,0 +1,1250 @@
+rank:1
+Planet Earth II
+year:2016
+id:tt5491994
+
+rank:2
+Planet Earth
+year:2006
+id:tt0795176
+
+rank:3
+Breaking Bad
+year:2008
+id:tt0903747
+
+rank:4
+Band of Brothers
+year:2001
+id:tt0185906
+
+rank:5
+Chernobyl
+year:2019
+id:tt7366338
+
+rank:6
+The Wire
+year:2002
+id:tt0306414
+
+rank:7
+Blue Planet II
+year:2017
+id:tt6769208
+
+rank:8
+Our Planet
+year:2019
+id:tt9253866
+
+rank:9
+Cosmos: A Spacetime Odyssey
+year:2014
+id:tt2395695
+
+rank:10
+Avatar: The Last Airbender
+year:2005
+id:tt0417299
+
+rank:11
+Cosmos
+year:1980
+id:tt0081846
+
+rank:12
+The Sopranos
+year:1999
+id:tt0141842
+
+rank:13
+Game of Thrones
+year:2011
+id:tt0944947
+
+rank:14
+Rick and Morty
+year:2013
+id:tt2861424
+
+rank:15
+The World at War
+year:1973
+id:tt0071075
+
+rank:16
+The Last Dance
+year:2020
+id:tt8420184
+
+rank:17
+Life
+year:2009
+id:tt1533395
+
+rank:18
+Fullmetal Alchemist: Brotherhood
+year:2009
+id:tt1355642
+
+rank:19
+Arcane
+year:2021
+id:tt11126994
+
+rank:20
+Sherlock
+year:2010
+id:tt1475582
+
+rank:21
+The Vietnam War
+year:2017
+id:tt1877514
+
+rank:22
+Scam 1992: The Harshad Mehta Story
+year:2020
+id:tt12392504
+
+rank:23
+The Beatles: Get Back
+year:2021
+id:tt9735318
+
+rank:24
+The Twilight Zone
+year:1959
+id:tt0052520
+
+rank:25
+The Blue Planet
+year:2001
+id:tt0296310
+
+rank:26
+Batman: The Animated Series
+year:1992
+id:tt0103359
+
+rank:27
+Human Planet
+year:2011
+id:tt1806234
+
+rank:28
+Firefly
+year:2002
+id:tt0303461
+
+rank:29
+Frozen Planet
+year:2011
+id:tt2092588
+
+rank:30
+Persona
+year:2018
+id:tt7920978
+
+rank:31
+Clarkson's Farm
+year:2021
+id:tt10541088
+
+rank:32
+Death Note
+year:2006
+id:tt0877057
+
+rank:33
+Dekalog
+year:1989
+id:tt0092337
+
+rank:34
+True Detective
+year:2014
+id:tt2356777
+
+rank:35
+Attack on Titan
+year:2013
+id:tt2560140
+
+rank:36
+Cowboy Bebop
+year:1998
+id:tt0213338
+
+rank:37
+The Civil War
+year:1990
+id:tt0098769
+
+rank:38
+Hunter x Hunter
+year:2011
+id:tt2098220
+
+rank:39
+Fargo
+year:2014
+id:tt2802850
+
+rank:40
+The Office
+year:2005
+id:tt0386676
+
+rank:41
+When They See Us
+year:2019
+id:tt7137906
+
+rank:42
+Africa
+year:2013
+id:tt2571774
+
+rank:43
+Apocalypse: The Second World War
+year:2009
+id:tt1508238
+
+rank:44
+Only Fools and Horses
+year:1981
+id:tt0081912
+
+rank:45
+TVF Pitchers
+year:2015
+id:tt4742876
+
+rank:46
+Last Week Tonight with John Oliver
+year:2014
+id:tt3530232
+
+rank:47
+Gravity Falls
+year:2012
+id:tt1865718
+
+rank:48
+Seinfeld
+year:1989
+id:tt0098904
+
+rank:49
+Das Boot
+year:1985
+id:tt0081834
+
+rank:50
+Nathan for You
+year:2013
+id:tt2297757
+
+rank:51
+Monty Python's Flying Circus
+year:1969
+id:tt0063929
+
+rank:52
+Friends
+year:1994
+id:tt0108778
+
+rank:53
+1883
+year:2021
+id:tt13991232
+
+rank:54
+Pride and Prejudice
+year:1995
+id:tt0112130
+
+rank:55
+Black Mirror
+year:2011
+id:tt2085059
+
+rank:56
+Twin Peaks
+year:1990
+id:tt0098936
+
+rank:57
+Over the Garden Wall
+year:2014
+id:tt3718778
+
+rank:58
+Kota Factory
+year:2019
+id:tt9432978
+
+rank:59
+Succession
+year:2018
+id:tt7660850
+
+rank:60
+Fawlty Towers
+year:1975
+id:tt0072500
+
+rank:61
+It's Always Sunny in Philadelphia
+year:2004
+id:tt0472954
+
+rank:62
+Blackadder Goes Forth
+year:1989
+id:tt0096548
+
+rank:63
+Narcos
+year:2015
+id:tt2707408
+
+rank:64
+Better Call Saul
+year:2015
+id:tt3032476
+
+rank:65
+Ted Lasso
+year:2020
+id:tt10986410
+
+rank:66
+Freaks and Geeks
+year:1999
+id:tt0193676
+
+rank:67
+Chappelle's Show
+year:2003
+id:tt0353049
+
+rank:68
+The Mandalorian
+year:2019
+id:tt8111088
+
+rank:69
+Peaky Blinders
+year:2013
+id:tt2442560
+
+rank:70
+The West Wing
+year:1999
+id:tt0200276
+
+rank:71
+Steins;Gate
+year:2011
+id:tt1910272
+
+rank:72
+Dark
+year:2017
+id:tt5753856
+
+rank:73
+BoJack Horseman
+year:2014
+id:tt3398228
+
+rank:74
+One Punch Man
+year:2015
+id:tt4508902
+
+rank:75
+Curb Your Enthusiasm
+year:2000
+id:tt0264235
+
+rank:76
+Dragon Ball Z
+year:1989
+id:tt0121220
+
+rank:77
+Vinland Saga
+year:2019
+id:tt10233448
+
+rank:78
+Rome
+year:2005
+id:tt0384766
+
+rank:79
+Dragon Ball Z
+year:1989
+id:tt0214341
+
+rank:80
+I, Claudius
+year:1976
+id:tt0074006
+
+rank:81
+Fleabag
+year:2016
+id:tt5687612
+
+rank:82
+Oz
+year:1997
+id:tt0118421
+
+rank:83
+Invincible
+year:2021
+id:tt6741278
+
+rank:84
+Leyla and Mecnun
+year:2011
+id:tt1831164
+
+rank:85
+Arrested Development
+year:2003
+id:tt0367279
+
+rank:86
+Six Feet Under
+year:2001
+id:tt0248654
+
+rank:87
+South Park
+year:1997
+id:tt0121955
+
+rank:88
+Stranger Things
+year:2016
+id:tt4574334
+
+rank:89
+The Adventures of Sherlock Holmes
+year:1984
+id:tt0086661
+
+rank:90
+The Marvelous Mrs. Maisel
+year:2017
+id:tt5788792
+
+rank:91
+The Boys
+year:2019
+id:tt1190634
+
+rank:92
+Battlestar Galactica
+year:2004
+id:tt0407362
+
+rank:93
+Justice League Unlimited
+year:2004
+id:tt6025022
+
+rank:94
+The Thick of It
+year:2005
+id:tt0459159
+
+rank:95
+House of Cards
+year:2013
+id:tt1856010
+
+rank:96
+One Piece
+year:1999
+id:tt0388629
+
+rank:97
+House
+year:2004
+id:tt0412142
+
+rank:98
+Berserk
+year:1997
+id:tt0318871
+
+rank:99
+The Simpsons
+year:1989
+id:tt0096697
+
+rank:100
+The Shield
+year:2002
+id:tt0286486
+
+rank:101
+Aspirants
+year:2021
+id:tt14392248
+
+rank:102
+The Crown
+year:2016
+id:tt4786824
+
+rank:103
+The Jinx: The Life and Deaths of Robert Durst
+year:2015
+id:tt4299972
+
+rank:104
+Mahabharat
+year:1988
+id:tt0158417
+
+rank:105
+Line of Duty
+year:2012
+id:tt2303687
+
+rank:106
+Downton Abbey
+year:2010
+id:tt1606375
+
+rank:107
+The Return of Sherlock Holmes
+year:1986
+id:tt0090509
+
+rank:108
+The Grand Tour
+year:2016
+id:tt5712554
+
+rank:109
+Ramayan
+year:1987
+id:tt0268093
+
+rank:110
+It's a Sin
+year:2021
+id:tt9140342
+
+rank:111
+Star Trek: The Next Generation
+year:1987
+id:tt0092455
+
+rank:112
+Deadwood
+year:2004
+id:tt0348914
+
+rank:113
+Top Gear
+year:2002
+id:tt1628033
+
+rank:114
+Atlanta
+year:2016
+id:tt4288182
+
+rank:115
+Dopesick
+year:2021
+id:tt9174558
+
+rank:116
+Lonesome Dove
+year:1989
+id:tt0096639
+
+rank:117
+Mad Men
+year:2007
+id:tt0804503
+
+rank:118
+Code Geass
+year:2006
+id:tt0994314
+
+rank:119
+Young Justice
+year:2010
+id:tt1641384
+
+rank:120
+The Bridge
+year:2011
+id:tt1733785
+
+rank:121
+Haikyuu!!
+year:2014
+id:tt3398540
+
+rank:122
+Sarabhai V/S Sarabhai
+year:2004
+id:tt1518542
+
+rank:123
+Formula 1: Drive to Survive
+year:2019
+id:tt8289930
+
+rank:124
+Blackadder II
+year:1986
+id:tt0088484
+
+rank:125
+Monster
+year:2004
+id:tt0434706
+
+rank:126
+Peep Show
+year:2003
+id:tt0387764
+
+rank:127
+The X-Files
+year:1993
+id:tt0106179
+
+rank:128
+Parks and Recreation
+year:2009
+id:tt1266020
+
+rank:129
+Demon Slayer: Kimetsu no Yaiba
+year:2019
+id:tt9335498
+
+rank:130
+Yellowstone
+year:2018
+id:tt4236770
+
+rank:131
+Gomorrah
+year:2014
+id:tt2049116
+
+rank:132
+Friday Night Lights
+year:2006
+id:tt0758745
+
+rank:133
+Mindhunter
+year:2017
+id:tt5290382
+
+rank:134
+Battlestar Galactica
+year:2003
+id:tt0314979
+
+rank:135
+The Bureau
+year:2015
+id:tt4063800
+
+rank:136
+Anne with an E
+year:2017
+id:tt5421602
+
+rank:137
+Father Ted
+year:1995
+id:tt0111958
+
+rank:138
+Jujutsu Kaisen
+year:2020
+id:tt12343534
+
+rank:139
+Dexter
+year:2006
+id:tt0773262
+
+rank:140
+The Haunting of Hill House
+year:2018
+id:tt6763664
+
+rank:141
+Westworld
+year:2016
+id:tt0475784
+
+rank:142
+The Bugs Bunny Show
+year:1960
+id:tt0053488
+
+rank:143
+Blackadder the Third
+year:1987
+id:tt0092324
+
+rank:144
+This Is Us
+year:2016
+id:tt5555260
+
+rank:145
+Daredevil
+year:2015
+id:tt3322312
+
+rank:146
+Archer
+year:2009
+id:tt1486217
+
+rank:147
+Panchayat
+year:2020
+id:tt12004706
+
+rank:148
+The Queen's Gambit
+year:2020
+id:tt10048342
+
+rank:149
+Gullak
+year:2019
+id:tt10530900
+
+rank:150
+The Newsroom
+year:2012
+id:tt1870479
+
+rank:151
+Crash Landing on You
+year:2019
+id:tt10850932
+
+rank:152
+Yes Minister
+year:1980
+id:tt0080306
+
+rank:153
+Rurouni Kenshin: Trust and Betrayal
+year:1999
+id:tt0203082
+
+rank:154
+Yeh Meri Family
+year:2018
+id:tt8595766
+
+rank:155
+Poirot
+year:1989
+id:tt0094525
+
+rank:156
+Behzat Ç.: Bir Ankara Polisiyesi
+year:2010
+id:tt1795096
+
+rank:157
+QI
+year:2003
+id:tt0380136
+
+rank:158
+Through the Wormhole
+year:2010
+id:tt1513168
+
+rank:159
+The Family Man
+year:2019
+id:tt9544034
+
+rank:160
+Justified
+year:2010
+id:tt1489428
+
+rank:161
+Mr. Bean
+year:1990
+id:tt0096657
+
+rank:162
+Making a Murderer
+year:2015
+id:tt5189670
+
+rank:163
+What We Do in the Shadows
+year:2016
+id:tt7908628
+
+rank:164
+North & South
+year:2004
+id:tt0417349
+
+rank:165
+Spaced
+year:1999
+id:tt0187664
+
+rank:166
+Naruto: Shippûden
+year:2007
+id:tt0988824
+
+rank:167
+Justice League
+year:2001
+id:tt0275137
+
+rank:168
+Neon Genesis Evangelion
+year:1995
+id:tt0112159
+
+rank:169
+Boardwalk Empire
+year:2010
+id:tt0979432
+
+rank:170
+Samurai Champloo
+year:2004
+id:tt0423731
+
+rank:171
+From the Earth to the Moon
+year:1998
+id:tt0120570
+
+rank:172
+Long Way Round
+year:2004
+id:tt0403778
+
+rank:173
+The Eric Andre Show
+year:2012
+id:tt2244495
+
+rank:174
+Mob Psycho 100
+year:2016
+id:tt5897304
+
+rank:175
+Pose
+year:2018
+id:tt7562112
+
+rank:176
+Twin Peaks
+year:2017
+id:tt4093826
+
+rank:177
+Dragon Ball
+year:1986
+id:tt0088509
+
+rank:178
+Adventure Time
+year:2010
+id:tt1305826
+
+rank:179
+Flight of the Conchords
+year:2007
+id:tt0863046
+
+rank:180
+Cobra Kai
+year:2018
+id:tt7221388
+
+rank:181
+Dragon Ball
+year:1995
+id:tt0280249
+
+rank:182
+Yes, Prime Minister
+year:1986
+id:tt0086831
+
+rank:183
+Mr. Robot
+year:2015
+id:tt4158110
+
+rank:184
+Letterkenny
+year:2016
+id:tt4647692
+
+rank:185
+The IT Crowd
+year:2006
+id:tt0487831
+
+rank:186
+Mystery Science Theater 3000
+year:1988
+id:tt0094517
+
+rank:187
+Black Sun
+year:2017
+id:tt6108262
+
+rank:188
+Coupling
+year:2000
+id:tt0237123
+
+rank:189
+Alfred Hitchcock Presents
+year:1955
+id:tt0047708
+
+rank:190
+Detectorists
+year:2014
+id:tt4082744
+
+rank:191
+Brass Eye
+year:1997
+id:tt0118273
+
+rank:192
+Endeavour
+year:2012
+id:tt2701582
+
+rank:193
+Fullmetal Alchemist
+year:2003
+id:tt0421357
+
+rank:194
+Homicide: Life on the Street
+year:1993
+id:tt0106028
+
+rank:195
+Skam
+year:2015
+id:tt5288312
+
+rank:196
+Doctor Who
+year:2005
+id:tt0436992
+
+rank:197
+Silicon Valley
+year:2014
+id:tt2575988
+
+rank:198
+The Expanse
+year:2015
+id:tt3230854
+
+rank:199
+Impractical Jokers
+year:2011
+id:tt2100976
+
+rank:200
+Louie
+year:2010
+id:tt1492966
+
+rank:201
+Generation Kill
+year:2008
+id:tt0995832
+
+rank:202
+Mr Inbetween
+year:2018
+id:tt7472896
+
+rank:203
+Hannibal
+year:2013
+id:tt2243973
+
+rank:204
+Ezel
+year:2009
+id:tt1534360
+
+rank:205
+Shameless
+year:2011
+id:tt1586680
+
+rank:206
+Spartacus: Gods of the Arena
+year:2011
+id:tt1758429
+
+rank:207
+The Office
+year:2001
+id:tt0290978
+
+rank:208
+Samurai Jack
+year:2001
+id:tt0278238
+
+rank:209
+The Night Of
+year:2016
+id:tt2401256
+
+rank:210
+Chef's Table
+year:2015
+id:tt4295140
+
+rank:211
+Whose Line Is It Anyway?
+year:1998
+id:tt0163507
+
+rank:212
+Sons of Anarchy
+year:2008
+id:tt1124373
+
+rank:213
+I'm Alan Partridge
+year:1997
+id:tt0129690
+
+rank:214
+Spartacus
+year:2010
+id:tt1442449
+
+rank:215
+Big Little Lies
+year:2017
+id:tt3920596
+
+rank:216
+Your Lie in April
+year:2014
+id:tt3895150
+
+rank:217
+My Brilliant Friend
+year:2018
+id:tt7278862
+
+rank:218
+Mare of Easttown
+year:2021
+id:tt10155688
+
+rank:219
+Black Books
+year:2000
+id:tt0262150
+
+rank:220
+The Defiant Ones
+year:2017
+id:tt6958022
+
+rank:221
+Erased
+year:2016
+id:tt5249462
+
+rank:222
+Schitt's Creek
+year:2015
+id:tt3526078
+
+rank:223
+Ethos
+year:2020
+id:tt11301642
+
+rank:224
+John Adams
+year:2008
+id:tt0472027
+
+rank:225
+Harley Quinn
+year:2019
+id:tt7658402
+
+rank:226
+The Knick
+year:2014
+id:tt2937900
+
+rank:227
+It's Okay to Not Be Okay
+year:2020
+id:tt12451520
+
+rank:228
+Dr. Horrible's Sing-Along Blog
+year:2008
+id:tt1227926
+
+rank:229
+Delhi Crime
+year:2019
+id:tt9398466
+
+rank:230
+Inside No. 9
+year:2014
+id:tt2674806
+
+rank:231
+Love, Death & Robots
+year:2019
+id:tt9561862
+
+rank:232
+Community
+year:2009
+id:tt1439629
+
+rank:233
+Generation War
+year:2013
+id:tt1883092
+
+rank:234
+The New Batman Adventures
+year:1997
+id:tt0118266
+
+rank:235
+The Punisher
+year:2017
+id:tt5675620
+
+rank:236
+Horace and Pete
+year:2016
+id:tt5425186
+
+rank:237
+The Venture Bros.
+year:2003
+id:tt0417373
+
+rank:238
+The Prisoner
+year:1967
+id:tt0061287
+
+rank:239
+Futurama
+year:1999
+id:tt0149460
+
+rank:240
+Regular Show
+year:2009
+id:tt1710308
+
+rank:241
+Jesus of Nazareth
+year:1977
+id:tt0075520
+
+rank:242
+Wentworth
+year:2013
+id:tt2433738
+
+rank:243
+Feud: Bette and Joan
+year:2017
+id:tt1984119
+
+rank:244
+Clannad: After Story
+year:2008
+id:tt1298820
+
+rank:245
+Flames
+year:2018
+id:tt7927936
+
+rank:246
+Scenes from a Marriage
+year:1973
+id:tt0070644
+
+rank:247
+X-Men: The Animated Series
+year:1992
+id:tt0103584
+
+rank:248
+After Life
+year:2019
+id:tt8398600
+
+rank:249
+Luther
+year:2010
+id:tt1474684
+
+rank:250
+Ghost in the Shell: Stand Alone Complex
+year:2002
+id:tt0346314
+
