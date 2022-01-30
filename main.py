@@ -3,6 +3,7 @@ import secrets
 
 
 def main():
+
     def getUserRatings(showId):
         loc = f"https://imdb-api.com/en/API/UserRatings/{secrets.secret_key}/{showId}"
         results = requests.get(loc)
@@ -32,10 +33,12 @@ def main():
             f.write(((tvDic.get("items"))[i]).get("title") + "\n")
             f.write("year:" + ((tvDic.get("items"))[i]).get("year") + "\n")
             f.write("id:" + ((tvDic.get("items"))[i]).get("id") + "\n\n")
+
     def searchByTitle(title):
         for j in range(250):
             if ((tv.get("items"))[j]).get("title") == title:
                 return ((tv.get("items"))[j]).get("rank")
+
     def searchByRank(rank):
         for k in range(250):
             if ((tv.get("items"))[k]).get("rank") == rank:
@@ -43,9 +46,9 @@ def main():
 
     def findIdByTitle(title):
 
-        for l in range(250):
-            if ((tv.get("items"))[l]).get("title") == title:
-                return ((tv.get("items"))[l]).get("id")
+        for w in range(250):
+            if ((tv.get("items"))[w]).get("title") == title:
+                return ((tv.get("items"))[w]).get("id")
 
     def findIdbyRank(rank):
 
