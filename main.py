@@ -31,26 +31,26 @@ def writeToFile250(tvDic):
         f.write("id:" + ((tvDic.get("items"))[i]).get("id") + "\n\n")
 
 
-def searchByTitle(title,tv):
+def searchByTitle(title, tv):
     for j in range(250):
         if ((tv.get("items"))[j]).get("title") == title:
             return ((tv.get("items"))[j]).get("rank")
 
 
-def searchByRank(rank,tv):
+def searchByRank(rank, tv):
     for k in range(250):
         if ((tv.get("items"))[k]).get("rank") == rank:
             return ((tv.get("items"))[k]).get("title")
 
 
-def findIdByTitle(title,tv):
+def findIdByTitle(title, tv):
 
     for w in range(250):
         if ((tv.get("items"))[w]).get("title") == title:
             return ((tv.get("items"))[w]).get("id")
 
 
-def findIdbyRank(rank,tv):
+def findIdbyRank(rank, tv):
 
     for n in range(250):
         if ((tv.get("items"))[n]).get("rank") == rank:
