@@ -64,18 +64,18 @@ def main():
             f.write("percent " + ((dic.get("ratings")[m]).get("percent")) + "\n")
             f.write("votes " + ((dic.get("ratings")[m]).get("votes")) + "\n\n")
 
-    data1 = getUserRatings("tt5491994")
-    data50 = getUserRatings("tt2297757")
-    data100 = getUserRatings("tt0286486")
-    data200 = getUserRatings("tt1492966")
+    # data1 = getUserRatings("tt5491994")
+    # data50 = getUserRatings("tt2297757")
+    # data100 = getUserRatings("tt0286486")
+    # data200 = getUserRatings("tt1492966")
 
     # dataWheel = getUserRatings()
 
     tv = get250Shows()
-    writeRatings(data1)
-    writeRatings(data50)
-    writeRatings(data100)
-    writeRatings(data200)
+    # writeRatings(data1)
+    # writeRatings(data50)
+    # writeRatings(data100)
+    # writeRatings(data200)
 
     writeToFile250(tv)
 
@@ -85,5 +85,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-else:
-    print("cvb")
