@@ -2,7 +2,7 @@ import requests
 import secrets
 
 
-
+f = open("data.txt", "w")
 
 
 def getUserRatings(showId):
@@ -13,6 +13,7 @@ def getUserRatings(showId):
         return
     return results.json()
 
+
 def get250Shows():
     loc = f"https://imdb-api.com/en/API/Top250TVs/{secrets.secret_key}"
     results = requests.get(loc)
@@ -20,13 +21,7 @@ def get250Shows():
         print("help!")
         return
     return results.json()
-# print(data)
-# 1 tt5491994
-# 50 tt2297757
-# 100 tt0286486
-# 200 tt1492966
 
-f = open("data.txt", "w")
 
 def writeToFile250(tvDic):
     for i in range(250):
@@ -35,15 +30,18 @@ def writeToFile250(tvDic):
         f.write("year:" + ((tvDic.get("items"))[i]).get("year") + "\n")
         f.write("id:" + ((tvDic.get("items"))[i]).get("id") + "\n\n")
 
+
 def searchByTitle(title,tv):
     for j in range(250):
         if ((tv.get("items"))[j]).get("title") == title:
             return ((tv.get("items"))[j]).get("rank")
 
+
 def searchByRank(rank,tv):
     for k in range(250):
         if ((tv.get("items"))[k]).get("rank") == rank:
             return ((tv.get("items"))[k]).get("title")
+
 
 def findIdByTitle(title,tv):
 
@@ -51,11 +49,13 @@ def findIdByTitle(title,tv):
         if ((tv.get("items"))[w]).get("title") == title:
             return ((tv.get("items"))[w]).get("id")
 
+
 def findIdbyRank(rank,tv):
 
     for n in range(250):
         if ((tv.get("items"))[n]).get("rank") == rank:
             return ((tv.get("items"))[n]).get("id")
+
 
 def writeRatings(dic):
 
@@ -65,13 +65,14 @@ def writeRatings(dic):
         f.write("percent " + ((dic.get("ratings")[m]).get("percent")) + "\n")
         f.write("votes " + ((dic.get("ratings")[m]).get("votes")) + "\n\n")
 
+
 def main():
 
     tv = get250Shows()
-    data1 = getUserRatings(findIdbyRank("1",tv))
-    data50 = getUserRatings(findIdbyRank("50",tv))
-    data100 = getUserRatings(findIdbyRank("100",tv))
-    data200 = getUserRatings(findIdbyRank("200",tv))
+    data1 = getUserRatings(findIdbyRank("1", tv))
+    data50 = getUserRatings(findIdbyRank("50", tv))
+    data100 = getUserRatings(findIdbyRank("100", tv))
+    data200 = getUserRatings(findIdbyRank("200",  tv))
     dataWheel = getUserRatings("tt7462410")
 
     writeRatings(data1)
