@@ -60,10 +60,15 @@ def findIdbyRank(rank, tv):
 def writeRatings(dic):
 
     f.write(dic.get("title") + "\n")
-    for m in range(10):
-        f.write("rating " + ((dic.get("ratings")[m]).get("rating")) + "\n")
-        f.write("percent " + ((dic.get("ratings")[m]).get("percent")) + "\n")
-        f.write("votes " + ((dic.get("ratings")[m]).get("votes")) + "\n\n")
+    if len(dic.get("ratings"))==0:
+        f.write("No ratings found!" + "\n\n")
+
+    else:
+
+        for m in range(len(dic.get("ratings"))):
+            f.write("rating " + ((dic.get("ratings")[m]).get("rating")) + "\n")
+            f.write("percent " + ((dic.get("ratings")[m]).get("percent")) + "\n")
+            f.write("votes " + ((dic.get("ratings")[m]).get("votes")) + "\n\n")
 
 
 def main():
