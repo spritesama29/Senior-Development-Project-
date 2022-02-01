@@ -60,7 +60,7 @@ def findIdbyRank(rank, tv):
 def writeRatings(dic):
 
     f.write(dic.get("title") + "\n")
-    if len(dic.get("ratings"))==0:
+    if len(dic.get("ratings")) == 0:
         f.write("No ratings found!" + "\n\n")
 
     else:
