@@ -1,6 +1,5 @@
-import sqlite3
+
 import main
-from typing import Tuple
 
 
 def check250():

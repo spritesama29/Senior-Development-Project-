@@ -7,7 +7,7 @@ from typing import Tuple
 f = open("data.txt", "w")
 
 
-def setup_db(cursor:sqlite3.Cursor):
+def setup_db(cursor: sqlite3.Cursor):
     cursor.execute('''CREATE TABLE IF NOT EXISTS table250(
     show_id TEXT PRIMARY KEY,
     title TEXT NOT NULL,
@@ -45,7 +45,7 @@ def setup_db(cursor:sqlite3.Cursor):
     );''')
 
 
-def open_db(filename:str)->Tuple[sqlite3.Connection, sqlite3.Cursor]:
+def open_db(filename: str) -> Tuple[sqlite3.Connection, sqlite3.Cursor]:
     db_connection = sqlite3.connect(filename)
     cursor = db_connection.cursor()
     return db_connection, cursor
@@ -122,7 +122,7 @@ def writeRatings(dic):
             f.write("votes " + ((dic.get("ratings")[m]).get("votes")) + "\n\n")
 
 
-def add250(cursor:sqlite3.Cursor,tv):
+def add250(cursor: sqlite3.Cursor, tv):
     q1 ="SELECT * FROM table250 WHERE show_id=(?)"
     check = cursor.execute(q1, ("tt5491994",))
     if len(check.fetchall()) == 0:
@@ -133,14 +133,25 @@ def add250(cursor:sqlite3.Cursor,tv):
         print("already in there")
 
 
-def addRatings(cursor:sqlite3.Cursor,data):
+def addRatings(cursor: sqlite3.Cursor, data):
     if len(data.get("ratings")) == 0:
         print("No ratings for " + data.get("imDbId"))
 
     else:
-        q = "INSERT INTO ratings(show_id,total_rating,total_rating_votes,rating10percentage,ratingVotes10,rating9percentage,ratingVotes9,rating8percentage,ratingVotes8,rating7percentage,ratingVotes7,rating6percentage,ratingVotes6,rating5percentage,ratingVotes5,rating4percentage,ratingVotes4,rating3percentage,ratingVotes3,rating2percentage,ratingVotes2,rating1percentage,ratingVotes1) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
-        cursor.execute(q, (data.get("imDbId"), data.get("totalRating"), data.get("totalRatingVotes"), (data.get("ratings")[0].get("percent")), (data.get("ratings")[0].get("votes")), (data.get("ratings")[1].get("percent")), (data.get("ratings")[1].get("votes")),
-                           (data.get("ratings")[2].get("percent")), (data.get("ratings")[2].get("votes")), (data.get("ratings")[3].get("percent")), (data.get("ratings")[3].get("votes")), (data.get("ratings")[4].get("percent")), (data.get("ratings")[4].get("votes")), (data.get("ratings")[5].get("percent")), (data.get("ratings")[5].get("votes")), (data.get("ratings")[6].get("percent")), (data.get("ratings")[6].get("votes")), (data.get("ratings")[7].get("percent")), (data.get("ratings")[7].get("votes")), (data.get("ratings")[8].get("percent")), (data.get("ratings")[8].get("votes")), (data.get("ratings")[9].get("percent")), (data.get("ratings")[9].get("votes"))))
+        q = "INSERT INTO ratings(show_id,total_rating,total_rating_votes,rating10percentage,ratingVotes10,rating9percentage,ratingVotes9," \
+            "rating8percentage,ratingVotes8,rating7percentage,ratingVotes7,rating6percentage,ratingVotes6,rating5percentage,ratingVotes5,rating4percentage,ratingVotes4,rating3percentage,ratingVotes3,rating2percentage,ratingVotes2,rating1percentage,ratingVotes1) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+        cursor.execute(q, (data.get("imDbId"), data.get("totalRating"), data.get("totalRatingVotes"),
+                           (data.get("ratings")[0].get("percent")), (data.get("ratings")[0].get("votes")),
+                           (data.get("ratings")[1].get("percent")), (data.get("ratings")[1].get("votes")),
+                           (data.get("ratings")[2].get("percent")), (data.get("ratings")[2].get("votes")),
+                           (data.get("ratings")[3].get("percent")),
+                           (data.get("ratings")[3].get("votes")), (data.get("ratings")[4].get("percent")),
+                           (data.get("ratings")[4].get("votes")), (data.get("ratings")[5].get("percent")),
+                           (data.get("ratings")[5].get("votes")), (data.get("ratings")[6].get("percent")),
+                           (data.get("ratings")[6].get("votes")), (data.get("ratings")[7].get("percent")),
+                           (data.get("ratings")[7].get("votes")), (data.get("ratings")[8].get("percent")),
+                           (data.get("ratings")[8].get("votes")), (data.get("ratings")[9].get("percent")),
+                           (data.get("ratings")[9].get("votes"))))
 
 
 def check250(cursor:sqlite3.Cursor):
