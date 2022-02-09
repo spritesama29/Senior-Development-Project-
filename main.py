@@ -128,7 +128,10 @@ def add250(cursor: sqlite3.Cursor, tv):
     if len(check.fetchall()) == 0:
         q = "INSERT INTO table250(show_id,title,full_title,year,crew,imdb_rating,rating_count) VALUES (?,?,?,?,?,?,?)"
         for i in range(250):
-            cursor.execute(q, (((tv.get("items"))[i]).get("id"), ((tv.get("items"))[i]).get("title"), ((tv.get("items"))[i]).get("fullTitle"), ((tv.get("items"))[i]).get("year"), ((tv.get("items"))[i]).get("crew"), ((tv.get("items"))[i]).get("imDbRating"), ((tv.get("items"))[i]).get("imDbRatingCount")))
+            cursor.execute(q, (((tv.get("items"))[i]).get("id"), ((tv.get("items"))[i]).get("title"),
+                               ((tv.get("items"))[i]).get("fullTitle"), ((tv.get("items"))[i]).get("year"),
+                               ((tv.get("items"))[i]).get("crew"), ((tv.get("items"))[i]).get("imDbRating"),
+                               ((tv.get("items"))[i]).get("imDbRatingCount")))
     else:
         print("already in there")
 
@@ -158,7 +161,7 @@ def addRatings(cursor: sqlite3.Cursor, data):
                            (data.get("ratings")[9].get("votes"))))
 
 
-def check250(cursor:sqlite3.Cursor):
+def check250(cursor: sqlite3.Cursor):
     q = "SELECT COUNT(*) FROM table250"
     cursor.execute(q)
     return cursor.fetchall()[0][0]
