@@ -6,7 +6,7 @@ from typing import Tuple
 
 f = open("data.txt", "w")
 
-
+# comment to test workflow
 def setup_db(cursor: sqlite3.Cursor):
     cursor.execute('''CREATE TABLE IF NOT EXISTS table250(
     show_id TEXT PRIMARY KEY,
