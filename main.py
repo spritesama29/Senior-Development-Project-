@@ -51,7 +51,7 @@ def open_db(filename: str) -> Tuple[sqlite3.Connection, sqlite3.Cursor]:
     return db_connection, cursor
 
 
-def close_db(connection:sqlite3.Connection):
+def close_db(connection: sqlite3.Connection):
     connection.commit()
     connection.close()
 
@@ -123,7 +123,7 @@ def writeRatings(dic):
 
 
 def add250(cursor: sqlite3.Cursor, tv):
-    q1 ="SELECT * FROM table250 WHERE show_id=(?)"
+    q1 = "SELECT * FROM table250 WHERE show_id=(?)"
     check = cursor.execute(q1, ("tt5491994",))
     if len(check.fetchall()) == 0:
         q = "INSERT INTO table250(show_id,title,full_title,year,crew,imdb_rating,rating_count) VALUES (?,?,?,?,?,?,?)"
@@ -138,8 +138,12 @@ def addRatings(cursor: sqlite3.Cursor, data):
         print("No ratings for " + data.get("imDbId"))
 
     else:
-        q = "INSERT INTO ratings(show_id,total_rating,total_rating_votes,rating10percentage,ratingVotes10,rating9percentage,ratingVotes9," \
-            "rating8percentage,ratingVotes8,rating7percentage,ratingVotes7,rating6percentage,ratingVotes6,rating5percentage,ratingVotes5,rating4percentage,ratingVotes4,rating3percentage,ratingVotes3,rating2percentage,ratingVotes2,rating1percentage,ratingVotes1) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+        q = "INSERT INTO ratings(show_id,total_rating,total_rating_votes,rating10percentage," \
+            "ratingVotes10,rating9percentage,ratingVotes9," \
+            "rating8percentage,ratingVotes8,rating7percentage,ratingVotes7,rating6percentage,ratingVotes6," \
+            "rating5percentage,ratingVotes5,rating4percentage,ratingVotes4,rating3percentage,ratingVotes3," \
+            "rating2percentage,ratingVotes2,rating1percentage,ratingVotes1) " \
+            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
         cursor.execute(q, (data.get("imDbId"), data.get("totalRating"), data.get("totalRatingVotes"),
                            (data.get("ratings")[0].get("percent")), (data.get("ratings")[0].get("votes")),
                            (data.get("ratings")[1].get("percent")), (data.get("ratings")[1].get("votes")),
@@ -178,7 +182,7 @@ def main():
     conn, cursor = open_db("demo_db.sqlite")
 
     setup_db(cursor)
-    add250(cursor,tv)
+    add250(cursor, tv)
     addRatings(cursor, data1)
     print("done")
     addRatings(cursor, data50)
