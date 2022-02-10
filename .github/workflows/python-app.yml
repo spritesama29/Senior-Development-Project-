@@ -36,7 +36,7 @@ jobs:
         API_KEY: $ {{secrets.api_key}}
         run: |
               echo $API_KEY >> bare.py
-              echo 'api_key = "'$API_KEY'"'>>secrets.py
+              echo 'api_key = "'$secrets_key'"'>>secrets.py
               - name: Install dependencies
               run: |
       run: |
