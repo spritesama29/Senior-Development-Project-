@@ -5,7 +5,6 @@ def test_checkTable():
     conn, cursor = main.open_db("testdata.sqlite")
     main.setup_db(cursor)
 
-
     q2 = "SELECT * FROM table250 WHERE show_id=(?)"
     check = cursor.execute(q2, ("abcdefg",))
     if len(check.fetchall()) == 0:
