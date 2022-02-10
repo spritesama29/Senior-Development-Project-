@@ -12,4 +12,3 @@ def test_check250():
 
     assert result == 250
 
-

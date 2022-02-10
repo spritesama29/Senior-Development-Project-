@@ -76,7 +76,7 @@ def get250Shows():
 
 def addWheel(cursor: sqlite3.Cursor):
     q = "INSERT INTO table250(show_id,title,full_title,year,crew,imdb_rating,rating_count) VALUES (?,?,?,?,?,?,?)"
-    cursor.execute(q, ("tt7462410", "The Wheel of Time","0","0","0","0","0"))
+    cursor.execute(q, ("tt7462410", "The Wheel of Time", "0", "0", "0", "0", "0"))
 
 
 def writeToFile250(tvDic):
