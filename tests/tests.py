@@ -11,4 +11,3 @@ def test_check250():
     result = main.check250(cursor)
 
     assert result == 250
-
