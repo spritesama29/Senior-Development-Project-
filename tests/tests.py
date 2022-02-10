@@ -7,7 +7,7 @@ def test_check250():
     main.setup_db(cursor)
     tv = main.get250Shows()
     main.add250(cursor, tv)
-    main.close_db(conn)
-    result = main.check250(cursor)
 
-    assert result == 250
+    result = main.check250(cursor)
+    main.close_db(conn)
+    assert result == 251
