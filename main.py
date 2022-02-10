@@ -3,6 +3,7 @@ import secrets
 import sqlite3
 from typing import Tuple
 
+# Kyle Stearns
 
 f = open("data.txt", "w")
 
