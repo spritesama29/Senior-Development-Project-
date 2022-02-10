@@ -74,6 +74,11 @@ def get250Shows():
     return results.json()
 
 
+def addWheel(cursor: sqlite3.Cursor):
+    q = "INSERT INTO table250(show_id,title,full_title,year,crew,imdb_rating,rating_count) VALUES (?,?,?,?,?,?,?)"
+    cursor.execute(q, ("tt7462410", "The Wheel of Time","0","0","0","0","0"))
+
+
 def writeToFile250(tvDic):
     for i in range(250):
         f.write("rank:" + ((tvDic.get("items"))[i]).get("rank") + "\n")
@@ -138,8 +143,14 @@ def add250(cursor: sqlite3.Cursor, tv):
 
 def addRatings(cursor: sqlite3.Cursor, data):
     if len(data.get("ratings")) == 0:
-        print("No ratings for " + data.get("imDbId"))
-
+        q = "INSERT INTO ratings(show_id,total_rating,total_rating_votes,rating10percentage," \
+            "ratingVotes10,rating9percentage,ratingVotes9," \
+            "rating8percentage,ratingVotes8,rating7percentage,ratingVotes7,rating6percentage,ratingVotes6," \
+            "rating5percentage,ratingVotes5,rating4percentage,ratingVotes4,rating3percentage,ratingVotes3," \
+            "rating2percentage,ratingVotes2,rating1percentage,ratingVotes1) " \
+            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+        cursor.execute(q, ("0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",
+                           "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", ))
     else:
         q = "INSERT INTO ratings(show_id,total_rating,total_rating_votes,rating10percentage," \
             "ratingVotes10,rating9percentage,ratingVotes9," \
@@ -187,14 +198,11 @@ def main():
     setup_db(cursor)
     add250(cursor, tv)
     addRatings(cursor, data1)
-    print("done")
     addRatings(cursor, data50)
-    print("done")
     addRatings(cursor, data100)
-    print("done")
     addRatings(cursor, data200)
-    print("done")
     addRatings(cursor, dataWheel)
+    addWheel(cursor)
     close_db(conn)
 
 
