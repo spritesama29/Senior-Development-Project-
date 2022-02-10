@@ -10,4 +10,4 @@ def test_check250():
 
     result = main.check250(cursor)
     main.close_db(conn)
-    assert result == 251
+    assert result == 250

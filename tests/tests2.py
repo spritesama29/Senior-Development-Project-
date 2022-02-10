@@ -16,6 +16,6 @@ def test_checkTable():
         cursor.execute(q1)
         result = cursor.fetchall()[0][0]
 
-        assert result == 1
+        assert result == 251
     else:
         print("already there")
