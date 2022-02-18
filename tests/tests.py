@@ -8,6 +8,6 @@ def test_check250():
     tv = main.get250Shows()
     main.add250(cursor, tv)
 
-    result = main.check250(cursor)
+    result = main.check250TV(cursor)
     main.close_db(conn)
     assert result == 250
