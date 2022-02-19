@@ -213,7 +213,7 @@ def orderRankUpDownMOV(num, tv):
     for i in range(num):
         num = ((tv.get("items"))[i]).get("rankUpDown")
         newNum = ""
-        if num=="":
+        if num == "":
             rankList[((tv.get("items"))[i]).get("id")] = 0
         else:
             for char in num:
