@@ -354,8 +354,8 @@ def addRatingsMOV(cursor: sqlite3.Cursor, data):
             "rating2percentage,ratingVotes2,rating1percentage,ratingVotes1) " \
             "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
         cursor.execute(q, (data.get("imDbId"), data.get("totalRating"),
-                           data.get("totalRatingVotes")
-                           , "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",
+                           data.get("totalRatingVotes"),
+                           "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",
                            "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",))
 
 
