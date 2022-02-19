@@ -1,5 +1,3 @@
-import operator
-
 import requests
 import secrets
 import sqlite3
@@ -174,7 +172,7 @@ def get250movies():
 def addWheel(cursor: sqlite3.Cursor):
     q = "INSERT INTO table250(show_id,rank,title,full_title,year,crew,imdb_rating,rating_count)" \
         "VALUES (?,?,?,?,?,?,?,?)"
-    cursor.execute(q, ("tt7462410", "The Wheel of Time", "0", "0", "0", "0", "0","0"))
+    cursor.execute(q, ("tt7462410", "The Wheel of Time", "0", "0", "0", "0", "0", "0"))
 
 
 def writeToFile250(tvDic):
@@ -198,26 +196,24 @@ def searchByRank(rank, tv):
 
 
 def findIdByTitle(title, tv):
-
     for w in range(250):
         if ((tv.get("items"))[w]).get("title") == title:
             return ((tv.get("items"))[w]).get("id")
 
 
 def findIdbyRank(rank, tv):
-
     for n in range(250):
         if ((tv.get("items"))[n]).get("rank") == rank:
             return ((tv.get("items"))[n]).get("id")
 
 
-def orderRankUpDownMOV(num,tv):
-    rankList={}
-    sortedList={}
+def orderRankUpDownMOV(num, tv):
+    rankList = {}
+    sortedList = {}
     for i in range(num):
         num = ((tv.get("items"))[i]).get("rankUpDown")
         newNum = ""
-        if num == None:
+        if num is None:
             rankList[((tv.get("items"))[i]).get("id")] = 0
         else:
             for char in num:
@@ -236,7 +232,6 @@ def orderRankUpDownMOV(num,tv):
 
 
 def writeRatings(dic):
-
     f.write(dic.get("title") + "\n")
     if len(dic.get("ratings")) == 0:
         f.write("No ratings found!" + "\n\n")
@@ -271,14 +266,15 @@ def add250MOV(cursor: sqlite3.Cursor, tv):
         "VALUES (?,?,?,?,?,?,?,?)"
     for i in range(250):
         cursor.execute(q, (((tv.get("items"))[i]).get("id"), ((tv.get("items"))[i]).get("rank"),
-                       ((tv.get("items"))[i]).get("title"),
-                       ((tv.get("items"))[i]).get("fullTitle"), ((tv.get("items"))[i]).get("year"),
-                       ((tv.get("items"))[i]).get("crew"), ((tv.get("items"))[i]).get("imDbRating"),
-                       ((tv.get("items"))[i]).get("imDbRatingCount")))
+                           ((tv.get("items"))[i]).get("title"),
+                           ((tv.get("items"))[i]).get("fullTitle"), ((tv.get("items"))[i]).get("year"),
+                           ((tv.get("items"))[i]).get("crew"), ((tv.get("items"))[i]).get("imDbRating"),
+                           ((tv.get("items"))[i]).get("imDbRatingCount")))
 
 
 def addPopTV(cursor: sqlite3.Cursor, tv):
-    q = "INSERT INTO popularTV(show_id,rank,rankUpDown,title,full_title,year,crew,imdb_rating,rating_count) VALUES (?,?,?,?,?,?,?,?,?)"
+    q = "INSERT INTO popularTV(show_id,rank,rankUpDown,title,full_title,year,crew,imdb_rating,rating_count) " \
+        "VALUES (?,?,?,?,?,?,?,?,?)"
     for i in range(100):
         cursor.execute(q, (((tv.get("items"))[i]).get("id"), ((tv.get("items"))[i]).get("rank"),
                            ((tv.get("items"))[i]).get("rankUpDown"), ((tv.get("items"))[i]).get("title"),
@@ -308,7 +304,7 @@ def addRatings(cursor: sqlite3.Cursor, data):
             "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
         cursor.execute(q, (data.get("imDbId"), data.get("totalRating"), data.get("totalRatingVotes")
                            , "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",
-                           "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", ))
+                           "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",))
     else:
         q = "INSERT INTO ratings(show_id,total_rating,total_rating_votes,rating10percentage," \
             "ratingVotes10,rating9percentage,ratingVotes9," \
@@ -331,7 +327,6 @@ def addRatings(cursor: sqlite3.Cursor, data):
 
 
 def addRatingsMOV(cursor: sqlite3.Cursor, data):
-
     try:
         q = "INSERT INTO ratingsMOV(show_id,total_rating,total_rating_votes,rating10percentage," \
             "ratingVotes10,rating9percentage,ratingVotes9," \
@@ -351,7 +346,7 @@ def addRatingsMOV(cursor: sqlite3.Cursor, data):
                            (data.get("ratings")[7].get("votes")), (data.get("ratings")[8].get("percent")),
                            (data.get("ratings")[8].get("votes")), (data.get("ratings")[9].get("percent")),
                            (data.get("ratings")[9].get("votes"))))
-    except:
+    except Exception:
         q = "INSERT INTO ratingsMOV(show_id,total_rating,total_rating_votes,rating10percentage," \
             "ratingVotes10,rating9percentage,ratingVotes9," \
             "rating8percentage,ratingVotes8,rating7percentage,ratingVotes7,rating6percentage,ratingVotes6," \
@@ -402,7 +397,6 @@ def foreignKeyTest(cursor: sqlite3.Cursor):
 
 
 def main():
-
     tv = get250Shows()
 
     data1 = getUserRatings(findIdbyRank("1", tv))
@@ -425,9 +419,9 @@ def main():
 
     popMov = getMostPopularMovies()
 
-    addPopMOV(cursor,popMov)
+    addPopMOV(cursor, popMov)
 
-    dic = orderRankUpDownMOV(100,mov)
+    dic = orderRankUpDownMOV(100, mov)
     negChange = getUserRatings(dic[0][0])
     posChange3 = getUserRatings(dic[97][0])
     posChange2 = getUserRatings(dic[98][0])

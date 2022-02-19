@@ -17,7 +17,7 @@ def test_RankUpDownHappy():
 
 
 def test_RankUpDownBad():
-    testDic =  {'items': [{'id': '1', 'rank': '1', 'rankUpDown': '-10034rf 0', 'title': 'a'},
+    testDic = {'items': [{'id': '1', 'rank': '1', 'rankUpDown': '-10034rf 0', 'title': 'a'},
                {'id': '2', 'rank': '1', 'rankUpDown': '', 'title': 'b'},
                {'id': '3', 'rank': '1', 'rankUpDown': ' ', 'title': 'c'},
                {'id': '4', 'rank': '1', 'rankUpDown': '-1asd00', 'title': 'd'}]}
