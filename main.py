@@ -213,7 +213,7 @@ def orderRankUpDownMOV(num, tv):
     for i in range(num):
         num = ((tv.get("items"))[i]).get("rankUpDown")
         newNum = ""
-        if num is None:
+        if num=="":
             rankList[((tv.get("items"))[i]).get("id")] = 0
         else:
             for char in num:
@@ -354,8 +354,7 @@ def addRatingsMOV(cursor: sqlite3.Cursor, data):
             "rating2percentage,ratingVotes2,rating1percentage,ratingVotes1) " \
             "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
         cursor.execute(q, (data.get("imDbId"), data.get("totalRating"),
-                           data.get("totalRatingVotes"),
-                           "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",
+                           data.get("totalRatingVotes"), "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",
                            "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",))
 
 
