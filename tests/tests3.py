@@ -25,4 +25,3 @@ def test_RankUpDownBad():
     # This test has bad data with an empty list, spaces in between, and letters. This checks that all the data go
     # into the list even with that bad data
     assert len(testList2) == 4
-

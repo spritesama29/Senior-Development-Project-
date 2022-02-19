@@ -302,8 +302,8 @@ def addRatings(cursor: sqlite3.Cursor, data):
             "rating5percentage,ratingVotes5,rating4percentage,ratingVotes4,rating3percentage,ratingVotes3," \
             "rating2percentage,ratingVotes2,rating1percentage,ratingVotes1) " \
             "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
-        cursor.execute(q, (data.get("imDbId"), data.get("totalRating"), data.get("totalRatingVotes")
-                           , "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",
+        cursor.execute(q, (data.get("imDbId"), data.get("totalRating"),
+                           data.get("totalRatingVotes"), "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",
                            "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",))
     else:
         q = "INSERT INTO ratings(show_id,total_rating,total_rating_votes,rating10percentage," \
@@ -353,7 +353,8 @@ def addRatingsMOV(cursor: sqlite3.Cursor, data):
             "rating5percentage,ratingVotes5,rating4percentage,ratingVotes4,rating3percentage,ratingVotes3," \
             "rating2percentage,ratingVotes2,rating1percentage,ratingVotes1) " \
             "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
-        cursor.execute(q, (data.get("imDbId"), data.get("totalRating"), data.get("totalRatingVotes")
+        cursor.execute(q, (data.get("imDbId"), data.get("totalRating"),
+                           data.get("totalRatingVotes")
                            , "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",
                            "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",))
 
@@ -392,7 +393,7 @@ def foreignKeyTest(cursor: sqlite3.Cursor):
     q = "SELECT * FROM sqlite_master WHERE name='ratingsMOV'"
     a = cursor.execute(q)
     b = a.fetchall()[0][4]
-    c = b.split("(")
+
     return b.split()
 
 

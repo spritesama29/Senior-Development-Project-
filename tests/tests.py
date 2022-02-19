@@ -20,9 +20,9 @@ def test_checkTables():
     main.addRatingsMOV(cursor, posChange2)
     main.addRatingsMOV(cursor, posChange1)
     main.add250TV(cursor, tv)
-    main.add250MOV(cursor,mov250)
-    main.addPopTV(cursor,poptv)
-    main.addPopMOV(cursor,popMov)
+    main.add250MOV(cursor, mov250)
+    main.addPopTV(cursor, poptv)
+    main.addPopMOV(cursor, popMov)
 
     tv250Count = main.check250TV(cursor)
     mov250Count = main.check250MOV(cursor)
@@ -34,7 +34,7 @@ def test_checkTables():
     assert mov250Count == 250
     assert popTVCount == 100
     assert popMOVCount == 100
-    assert  ratingsMOVCount == 4
+    assert ratingsMOVCount == 4
 
 
 def test_foreignKeyMOV():
