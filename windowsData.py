@@ -1,9 +1,9 @@
-from PySide6.QtWidgets import QWidget, QPushButton, QListWidget, QApplication, QListWidgetItem, QMessageBox
+from PySide6.QtWidgets import QWidget, QPushButton, QMessageBox
 import pyqtgraph as pg
 
 import main
 import tvTable
-import tvWindow
+
 import windowsData
 import movieWindow
 

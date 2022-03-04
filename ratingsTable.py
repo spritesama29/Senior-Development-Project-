@@ -1,7 +1,6 @@
 from PySide6.QtWidgets import QWidget, \
-    QPushButton, QListWidget, QApplication, QListWidgetItem, QMessageBox, QTableWidget, QTableWidgetItem, QVBoxLayout
+     QMessageBox, QTableWidget, QTableWidgetItem
 import main
-import windowsData
 import tvTable
 
 
