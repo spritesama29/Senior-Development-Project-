@@ -40,4 +40,3 @@ class tvWindow(QWidget):
     def MovieMenu(self):
         conn, cursor = main.open_db("demo_db.sqlite")
         tv = main.orderBy(cursor)
-        print(tv)

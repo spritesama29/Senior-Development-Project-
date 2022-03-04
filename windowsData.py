@@ -1,5 +1,4 @@
 from PySide6.QtWidgets import QWidget, QPushButton, QListWidget, QApplication, QListWidgetItem, QMessageBox
-from pyqtgraph import PlotWidget, plot
 import pyqtgraph as pg
 
 import main
@@ -53,6 +52,7 @@ class dataWindow(QWidget):
         messageBox.setMinimumWidth(400)
         messageBox.setWindowTitle("Relatable tv titles")
         messageBox.show()
+
     def movMerge(self):
         self.conn, self.cursor = main.open_db("demo_db.sqlite")
         mov = main.getMOVjoin(self.cursor)
@@ -64,21 +64,24 @@ class dataWindow(QWidget):
         messageBox.setMinimumWidth(400)
         messageBox.setWindowTitle("Relatable tv titles")
         messageBox.show()
+
+
     def tvTime(self):
         self.tvWindows = tvTable.tvTable()
+
     def movieTime(self):
         self.movieWindows = movieWindow.movieWindow()
+
     def graph(self):
         self.graphWidget = pg.PlotWidget()
         self.conn, self.cursor = main.open_db("demo_db.sqlite")
         tv = main.orderByASCTV(self.cursor)
         mov = main.orderByASCMOV(self.cursor)
 
-
-        posTV = main.posAndNegSort(tv,mov,"posTV")
-        negTV = main.posAndNegSort(tv,mov,"negTV")
-        posMOV = main.posAndNegSort(tv,mov,"posMOV")
-        negMOV = main.posAndNegSort(tv,mov,"negMOV")
+        posTV = main.posAndNegSort(tv, mov, "posTV")
+        negTV = main.posAndNegSort(tv, mov, "negTV")
+        posMOV = main.posAndNegSort(tv, mov, "posMOV")
+        negMOV = main.posAndNegSort(tv, mov, "negMOV")
 
         posTVAxis = main.getGraphCoords(self.cursor, posTV, mov, "posTVAxis")
         negTVAxis = main.getGraphCoords(self.cursor, negTV, mov, "negTVAxis")
@@ -90,11 +93,12 @@ class dataWindow(QWidget):
         negMOVlen = main.getGraphCoords(self.cursor, tv, negMOV, "negMOVlen")
         pen = pg.mkPen(color=(255, 0, 0))
         bluePen = pg.mkPen(color=(0, 255, 0))
-        self.graphWidget.plot(posTVAxis,posTVlen, pen=pen)
-        self.graphWidget.plot(negTVAxis,negTVlen, bluePen=bluePen)
-        self.graphWidget.plot(posMOVAxis,posMOVlen, pen=pen)
-        self.graphWidget.plot(negMOVAxis,negMOVlen, bluePen=bluePen)
-        self.graphWidget.setLabel("left","Number of tv shows/movies")
-        self.graphWidget.setLabel("bottom", "TV Shows(went up)--------------TV Shows(went down)----------Movies(going up)----------Movies(going down)")
+        self.graphWidget.plot(posTVAxis, posTVlen, pen=pen)
+        self.graphWidget.plot(negTVAxis, negTVlen, bluePen=bluePen)
+        self.graphWidget.plot(posMOVAxis, posMOVlen, pen=pen)
+        self.graphWidget.plot(negMOVAxis, negMOVlen, bluePen=bluePen)
+        self.graphWidget.setLabel("left", "Number of tv shows/movies")
+        self.graphWidget.setLabel("bottom", "TV Shows(went up)--------------TV Shows(went down)----------Movies(going "
+                                            "up)----------Movies(going down)")
         self.graphWidget.setLabel("top", "Red lines = Going up-------------------White lines = Going down")
         self.graphWidget.show()

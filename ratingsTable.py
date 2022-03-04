@@ -1,11 +1,9 @@
 from PySide6.QtWidgets import QWidget, \
     QPushButton, QListWidget, QApplication, QListWidgetItem, QMessageBox, QTableWidget, QTableWidgetItem, QVBoxLayout
-
-
-
 import main
 import windowsData
 import tvTable
+
 
 class ratingsTable(QWidget):
     def __init__(self):
@@ -20,7 +18,6 @@ class ratingsTable(QWidget):
         self.setWindowTitle("tvTable")
         self.conn, self.cursor = main.open_db("demo_db.sqlite")
         tv = main.getUserRatings(tvTable.id)
-
 
         self.setGeometry(300, 100, 400, 500)
         self.tableWidget = QTableWidget()
@@ -40,7 +37,6 @@ class ratingsTable(QWidget):
             self.tableWidget.setItem(i, 7, QTableWidgetItem(tv[i][7]))
             self.tableWidget.setItem(i, 8, QTableWidgetItem(tv[i][8]))
 
-        #self.show()
         self.tableWidget.show()
         self.tableWidget.setEditTriggers(QTableWidget.NoEditTriggers)
         self.tableWidget.currentItemChanged.connect(self.yeet)
@@ -50,8 +46,8 @@ class ratingsTable(QWidget):
         ratings = main.getUserRatings(self.tableWidget.currentItem().text())
         ratingsStr = ""
         for i in range(10):
-            ratingsStr += ratings.get("ratings")[i].get('rating') + ratings.get("ratings")[i].get('percent')  + ratings.get("ratings")[i].get('votes') + "\n"
-
+            ratingsStr += ratings.get("ratings")[i].get('rating') + \
+                          ratings.get("ratings")[i].get('percent') + ratings.get("ratings")[i].get('votes') + "\n"
 
         message_box.setText(ratingsStr)
         message_box.setWindowTitle("Comp490 Demo")

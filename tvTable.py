@@ -32,22 +32,19 @@ class tvTable(QWidget):
         tvRankUpDown.clicked.connect(self.tvTableTimeUpDown)
         tv250Table.clicked.connect(self.tv250)
 
-
-        #self.show()
-
-
     def ratingsDisplay(self):
         message_box = QMessageBox(self)
         ratings = main.getUserRatings(self.tableWidget.currentItem().text())
         ratingsStr = ""
         ratingsStr += 'Total ratings: %s \n\n' % (ratings.get("totalRatingVotes"))
         for i in range(10):
-            ratingsStr += 'rating: %s Percent: %s Votes: %s \n\n' % (ratings.get("ratings")[i].get('rating'),ratings.get("ratings")[i].get('percent'),ratings.get("ratings")[i].get('votes'))
+            ratingsStr += 'rating: %s Percent: %s Votes: %s \n\n' \
+                          % (ratings.get("ratings")[i].get('rating'),
+                             ratings.get("ratings")[i].get('percent'), ratings.get("ratings")[i].get('votes'))
 
         message_box.setText(ratingsStr)
         message_box.setWindowTitle("TV Window")
         message_box.show()
-
 
     def tvTableTimeUpDown(self):
         self.conn, self.cursor = main.open_db("demo_db.sqlite")
@@ -57,7 +54,8 @@ class tvTable(QWidget):
         self.tableWidget.setMinimumHeight(500)
         self.tableWidget.setRowCount(100)
         self.tableWidget.setColumnCount(9)
-        self.tableWidget.setHorizontalHeaderLabels(["ID", "Ranking", "RankUpDown", "Title","fullTitle","year","crew","rating","total votes"])
+        self.tableWidget.setHorizontalHeaderLabels(["ID", "Ranking", "RankUpDown", "Title",
+                                                    "fullTitle", "year", "crew", "rating", "total votes"])
         for i in range(100):
             self.tableWidget.setItem(i, 0, QTableWidgetItem(str(tv[i][0])))
             self.tableWidget.setItem(i, 1, QTableWidgetItem(str(tv[i][1])))
@@ -80,7 +78,8 @@ class tvTable(QWidget):
         self.tableWidget.setMinimumHeight(500)
         self.tableWidget.setRowCount(100)
         self.tableWidget.setColumnCount(9)
-        self.tableWidget.setHorizontalHeaderLabels(["ID", "Ranking", "RankUpDown", "Title","fullTitle","year","crew","rating","total votes"])
+        self.tableWidget.setHorizontalHeaderLabels(["ID", "Ranking", "RankUpDown", "Title",
+                                                    "fullTitle", "year", "crew", "rating", "total votes"])
         for i in range(100):
             self.tableWidget.setItem(i, 0, QTableWidgetItem(str(tv[i][0])))
             self.tableWidget.setItem(i, 1, QTableWidgetItem(str(tv[i][1])))

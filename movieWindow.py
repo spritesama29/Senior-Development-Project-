@@ -32,11 +32,6 @@ class movieWindow(QWidget):
         movRanking.clicked.connect(self.movMakerRanking)
         movRankUpDown.clicked.connect(self.movMakerRankDown)
 
-
-
-        #self.show()
-
-
     def ratingsDisplay(self):
         message_box = QMessageBox(self)
         ratings = main.getUserRatings(self.tableWidget.currentItem().text())
@@ -49,22 +44,24 @@ class movieWindow(QWidget):
         message_box.setWindowTitle("Movie Window")
         message_box.show()
 
-
     def movMakerRankDown(self):
         self.conn, self.cursor = main.open_db("demo_db.sqlite")
         tv = main.orderBy(self.cursor,"mov")
         self.TableTime(tv)
+
     def movMakerRanking(self):
         self.conn, self.cursor = main.open_db("demo_db.sqlite")
         tv = main.rankBy(self.cursor,"mov")
         self.TableTime(tv)
+
     def TableTime(self,tv):
         self.tableWidget = QTableWidget()
         self.tableWidget.setMinimumWidth(500)
         self.tableWidget.setMinimumHeight(500)
         self.tableWidget.setRowCount(100)
         self.tableWidget.setColumnCount(9)
-        self.tableWidget.setHorizontalHeaderLabels(["ID", "Ranking", "RankUpDown", "Title","fullTitle","year","crew","rating","total votes"])
+        self.tableWidget.setHorizontalHeaderLabels(["ID", "Ranking", "RankUpDown", "Title",
+                                                    "fullTitle", "year", "crew", "rating", "total votes"])
         for i in range(100):
             self.tableWidget.setItem(i, 0, QTableWidgetItem(str(tv[i][0])))
             self.tableWidget.setItem(i, 1, QTableWidgetItem(str(tv[i][1])))

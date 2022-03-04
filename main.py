@@ -407,44 +407,57 @@ def orderByASCTV(cursor: sqlite3.Cursor):
     q = "SELECT * FROM popularTV ORDER BY rankUpDown ASC"
     a = cursor.execute(q)
     return a.fetchall()
+
+
 def orderByASCMOV(cursor: sqlite3.Cursor):
     q = "SELECT * FROM popularMOV ORDER BY rankUpDown ASC"
     a = cursor.execute(q)
     return a.fetchall()
 
+
 def orderBy(cursor: sqlite3.Cursor,type):
-    if type=="mov":
+    if type == "mov":
         q = "SELECT * FROM popularMOV ORDER BY rankUpDown DESC"
         a = cursor.execute(q)
         return a.fetchall()
-    elif type=="tv":
+    elif type == "tv":
         q = "SELECT * FROM popularTV ORDER BY rankUpDown DESC"
         a = cursor.execute(q)
         return a.fetchall()
-def rankBy(cursor: sqlite3.Cursor,type):
+
+
+def rankBy(cursor: sqlite3.Cursor, type):
     if type=="mov":
         q = "SELECT * FROM popularMOV ORDER BY rank ASC "
         a = cursor.execute(q)
         return a.fetchall()
-    elif type=="tv":
+    elif type == "tv":
         q = "SELECT * FROM popularTV ORDER BY rank ASC "
         a = cursor.execute(q)
         return a.fetchall()
+
 
 def get250nice(cursor: sqlite3.Cursor):
     q = "SELECT * FROM table250 ORDER BY rank ASC "
     a = cursor.execute(q)
     return a.fetchall()
+
+
 def getTVjoin(cursor: sqlite3.Cursor):
-    q = "SELECT table250.show_id,table250.title FROM table250 INNER JOIN popularTV ON table250.show_id = popularTV.show_id"
-    a = cursor.execute(q)
-    return a.fetchall()
-def getMOVjoin(cursor: sqlite3.Cursor):
-    q = "SELECT table250MOV.show_id,table250MOV.title FROM table250MOV INNER JOIN popularMOV ON table250MOV.show_id = popularMOV.show_id"
+    q = "SELECT table250.show_id,table250.title FROM table250 INNER JOIN popularTV ON " \
+        "table250.show_id = popularTV.show_id"
     a = cursor.execute(q)
     return a.fetchall()
 
-def getGraphCoords(cursor: sqlite3.Cursor,tv,mov,type):
+
+def getMOVjoin(cursor: sqlite3.Cursor):
+    q = "SELECT table250MOV.show_id,table250MOV.title FROM table250MOV INNER JOIN popularMOV ON" \
+        " table250MOV.show_id = popularMOV.show_id"
+    a = cursor.execute(q)
+    return a.fetchall()
+
+
+def getGraphCoords(cursor: sqlite3.Cursor, tv, mov, type):
 
     posTVAxis = []
     negTVAxis = []
@@ -458,38 +471,39 @@ def getGraphCoords(cursor: sqlite3.Cursor,tv,mov,type):
     negTV = []
     posMOV = []
     negMOV = []
-    if type=="posTVlen":
+    if type == "posTVlen":
         for j in range(len(tv)):
             posTVlen.insert(j, j)
         return posTVlen
-    elif type=="posTVAxis":
+    elif type == "posTVAxis":
         for n in range(len(tv)):
             posTVAxis.insert(n, 1)
         return posTVAxis
-    elif type=="negTVlen":
+    elif type == "negTVlen":
         for k in range(len(tv)):
             negTVlen.insert(k, k)
         return negTVlen
-    elif type=="negTVAxis":
+    elif type == "negTVAxis":
         for o in range(len(tv)):
             negTVAxis.insert(o, 3)
         return negTVAxis
-    elif type=="posMOVlen":
+    elif type == "posMOVlen":
         for l in range(len(mov)):
             posMOVlen.insert(l, l)
         return posMOVlen
-    elif type=="posMOVAxis":
+    elif type == "posMOVAxis":
         for p in range(len(mov)):
             posMOVAxis.insert(p, 5)
         return posMOVAxis
-    elif type=="negMOVlen":
+    elif type == "negMOVlen":
         for m in range(len(mov)):
             negMOVlen.insert(m, m)
         return negMOVlen
-    elif type =="negMOVAxis":
+    elif type == "negMOVAxis":
         for q in range(len(mov)):
             negMOVAxis.insert(q, 7)
         return negMOVAxis
+
 
 def posAndNegSort(tv,mov,type):
     posTV = []
@@ -511,14 +525,16 @@ def posAndNegSort(tv,mov,type):
             posMOV.insert(i, upDownIntMOV)
         elif upDownIntMOV < 0:
             negMOV.insert(i, upDownIntMOV)
-    if type=="posTV":
+    if type == "posTV":
         return posTV
-    elif type=="negTV":
+    elif type == "negTV":
         return negTV
     elif type == "posMOV":
         return posMOV
     elif type == "negMOV":
         return negMOV
+
+
 def main():
     tv = get250Shows()
 
