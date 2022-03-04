@@ -12,7 +12,7 @@ def setup_db(cursor: sqlite3.Cursor):
     cursor.execute("""DROP TABLE IF EXISTS TABLE250""")
     cursor.execute('''CREATE TABLE IF NOT EXISTS table250(
     show_id TEXT PRIMARY KEY,
-    rank TEXT NOT NULL,
+    rank INTEGER NOT NULL,
     title TEXT NOT NULL,
     full_title TEXT NOT NULL,
     year TEXT NOT NULL,
@@ -23,7 +23,7 @@ def setup_db(cursor: sqlite3.Cursor):
     cursor.execute("""DROP TABLE IF EXISTS TABLE250MOV""")
     cursor.execute('''CREATE TABLE IF NOT EXISTS table250MOV(
         show_id TEXT PRIMARY KEY,
-        rank TEXT NOT NULL,
+        rank INTEGER NOT NULL,
         title TEXT NOT NULL,
         full_title TEXT NOT NULL,
         year TEXT NOT NULL,
@@ -34,8 +34,8 @@ def setup_db(cursor: sqlite3.Cursor):
     cursor.execute("""DROP TABLE IF EXISTS PopularTV""")
     cursor.execute('''CREATE TABLE IF NOT EXISTS popularTV(
         show_id TEXT NOT NULL,
-        rank TEXT NOT NULL,
-        rankUpDown TEXT NOT NULL,
+        rank INTEGER NOT NULL,
+        rankUpDown INTEGER NOT NULL,
         title TEXT NOT NULL,
         full_title TEXT NOT NULL,
         year TEXT NOT NULL,
@@ -47,8 +47,8 @@ def setup_db(cursor: sqlite3.Cursor):
     cursor.execute("""DROP TABLE IF EXISTS popularMOV""")
     cursor.execute('''CREATE TABLE IF NOT EXISTS popularMOV(
             show_id TEXT NOT NULL,
-            rank TEXT NOT NULL,
-            rankUpDown TEXT NOT NULL,
+            rank INTEGER NOT NULL,
+            rankUpDown INTEGER NOT NULL,
             title TEXT NOT NULL,
             full_title TEXT NOT NULL,
             year TEXT NOT NULL,
@@ -88,7 +88,7 @@ def setup_db(cursor: sqlite3.Cursor):
     cursor.execute('''CREATE TABLE IF NOT EXISTS ratingsMOV(
         show_id TEXT PRIMARY KEY ,
         total_rating TEXT DEFAULT "none",
-        total_rating_votes TEXT DEFAULT "none",
+        total_rating_votes INTEGER DEFAULT "none",
         rating10percentage TEXT DEFAULT "none",
         ratingVotes10 TEXT DEFAULT "none",
         rating9percentage TEXT DEFAULT "none",
@@ -142,7 +142,7 @@ def get250Shows():
     return results.json()
 
 
-def getMostPopularTVs():
+def getMostPopularMovies():
     loc = f"https://imdb-api.com/en/API/MostPopularMovies/{secrets.secret_key}"
     results = requests.get(loc)
     if results.status_code != 200:
@@ -151,7 +151,7 @@ def getMostPopularTVs():
     return results.json()
 
 
-def getMostPopularMovies():
+def getMostPopularTVs():
     loc = f"https://imdb-api.com/en/API/MostPopularTVs/{secrets.secret_key}"
     results = requests.get(loc)
     if results.status_code != 200:
@@ -211,9 +211,12 @@ def orderRankUpDownMOV(num, tv):
     rankList = {}
     sortedList = {}
     for i in range(num):
-        num = ((tv.get("items"))[i]).get("rankUpDown")
+        num = str(((tv.get("items"))[i]).get("rankUpDown"))
         newNum = ""
-        if num == "":
+
+        if num == None:
+            rankList[((tv.get("items"))[i]).get("id")] = 0
+        elif num == '':
             rankList[((tv.get("items"))[i]).get("id")] = 0
         else:
             for char in num:
@@ -224,7 +227,11 @@ def orderRankUpDownMOV(num, tv):
                 elif char.isdigit():
                     if char != ",":
                         newNum = newNum + char
-            rankList[((tv.get("items"))[i]).get("id")] = int(newNum)
+            try:
+
+                rankList[((tv.get("items"))[i]).get("id")] = int(newNum)
+            except:
+                rankList[((tv.get("items"))[i]).get("id")] = "0"
 
     sortedList = sorted(rankList.items(), key=lambda t: t[1])
 
@@ -396,6 +403,122 @@ def foreignKeyTest(cursor: sqlite3.Cursor):
     return b.split()
 
 
+def orderByASCTV(cursor: sqlite3.Cursor):
+    q = "SELECT * FROM popularTV ORDER BY rankUpDown ASC"
+    a = cursor.execute(q)
+    return a.fetchall()
+def orderByASCMOV(cursor: sqlite3.Cursor):
+    q = "SELECT * FROM popularMOV ORDER BY rankUpDown ASC"
+    a = cursor.execute(q)
+    return a.fetchall()
+
+def orderBy(cursor: sqlite3.Cursor,type):
+    if type=="mov":
+        q = "SELECT * FROM popularMOV ORDER BY rankUpDown DESC"
+        a = cursor.execute(q)
+        return a.fetchall()
+    elif type=="tv":
+        q = "SELECT * FROM popularTV ORDER BY rankUpDown DESC"
+        a = cursor.execute(q)
+        return a.fetchall()
+def rankBy(cursor: sqlite3.Cursor,type):
+    if type=="mov":
+        q = "SELECT * FROM popularMOV ORDER BY rank ASC "
+        a = cursor.execute(q)
+        return a.fetchall()
+    elif type=="tv":
+        q = "SELECT * FROM popularTV ORDER BY rank ASC "
+        a = cursor.execute(q)
+        return a.fetchall()
+
+def get250nice(cursor: sqlite3.Cursor):
+    q = "SELECT * FROM table250 ORDER BY rank ASC "
+    a = cursor.execute(q)
+    return a.fetchall()
+def getTVjoin(cursor: sqlite3.Cursor):
+    q = "SELECT table250.show_id,table250.title FROM table250 INNER JOIN popularTV ON table250.show_id = popularTV.show_id"
+    a = cursor.execute(q)
+    return a.fetchall()
+def getMOVjoin(cursor: sqlite3.Cursor):
+    q = "SELECT table250MOV.show_id,table250MOV.title FROM table250MOV INNER JOIN popularMOV ON table250MOV.show_id = popularMOV.show_id"
+    a = cursor.execute(q)
+    return a.fetchall()
+
+def getGraphCoords(cursor: sqlite3.Cursor,tv,mov,type):
+
+    posTVAxis = []
+    negTVAxis = []
+    posMOVAxis = []
+    negMOVAxis = []
+    posTVlen = []
+    negTVlen = []
+    posMOVlen = []
+    negMOVlen = []
+    posTV = []
+    negTV = []
+    posMOV = []
+    negMOV = []
+    if type=="posTVlen":
+        for j in range(len(tv)):
+            posTVlen.insert(j, j)
+        return posTVlen
+    elif type=="posTVAxis":
+        for n in range(len(tv)):
+            posTVAxis.insert(n, 1)
+        return posTVAxis
+    elif type=="negTVlen":
+        for k in range(len(tv)):
+            negTVlen.insert(k, k)
+        return negTVlen
+    elif type=="negTVAxis":
+        for o in range(len(tv)):
+            negTVAxis.insert(o, 3)
+        return negTVAxis
+    elif type=="posMOVlen":
+        for l in range(len(mov)):
+            posMOVlen.insert(l, l)
+        return posMOVlen
+    elif type=="posMOVAxis":
+        for p in range(len(mov)):
+            posMOVAxis.insert(p, 5)
+        return posMOVAxis
+    elif type=="negMOVlen":
+        for m in range(len(mov)):
+            negMOVlen.insert(m, m)
+        return negMOVlen
+    elif type =="negMOVAxis":
+        for q in range(len(mov)):
+            negMOVAxis.insert(q, 7)
+        return negMOVAxis
+
+def posAndNegSort(tv,mov,type):
+    posTV = []
+    negTV = []
+    posMOV = []
+    negMOV = []
+    for i in range(len(tv)):
+        upDown = str(tv[i][2])
+        upDownReal = upDown.replace(",", '')
+        upDownInt = int(upDownReal)
+        if upDownInt > 0:
+            posTV.insert(i, upDownInt)
+        elif upDownInt < 0:
+            negTV.insert(i, upDownInt)
+        upDownMOV = str(mov[i][2])
+        upDownRealMOV = upDownMOV.replace(",", '')
+        upDownIntMOV = int(upDownRealMOV)
+        if upDownIntMOV > 0:
+            posMOV.insert(i, upDownIntMOV)
+        elif upDownIntMOV < 0:
+            negMOV.insert(i, upDownIntMOV)
+    if type=="posTV":
+        return posTV
+    elif type=="negTV":
+        return negTV
+    elif type == "posMOV":
+        return posMOV
+    elif type == "negMOV":
+        return negMOV
 def main():
     tv = get250Shows()
 
