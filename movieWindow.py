@@ -35,7 +35,9 @@ class movieWindow(QWidget):
         ratingsStr = ""
         ratingsStr += 'Total ratings: %s \n\n' % (ratings.get("totalRatingVotes"))
         for i in range(10):
-            ratingsStr += 'rating: %s Percent: %s Votes: %s \n\n' % (ratings.get("ratings")[i].get('rating'),ratings.get("ratings")[i].get('percent'),ratings.get("ratings")[i].get('votes'))
+            ratingsStr += 'rating: %s Percent: %s Votes: %s \n\n' % (ratings.get("ratings")[i].get('rating'),
+                                                                     ratings.get("ratings")[i].get('percent'),
+                                                                     ratings.get("ratings")[i].get('votes'))
 
         message_box.setText(ratingsStr)
         message_box.setWindowTitle("Movie Window")
@@ -43,15 +45,15 @@ class movieWindow(QWidget):
 
     def movMakerRankDown(self):
         self.conn, self.cursor = main.open_db("demo_db.sqlite")
-        tv = main.orderBy(self.cursor,"mov")
+        tv = main.orderBy(self.cursor, "mov")
         self.TableTime(tv)
 
     def movMakerRanking(self):
         self.conn, self.cursor = main.open_db("demo_db.sqlite")
-        tv = main.rankBy(self.cursor,"mov")
+        tv = main.rankBy(self.cursor, "mov")
         self.TableTime(tv)
 
-    def TableTime(self,tv):
+    def TableTime(self, tv):
         self.tableWidget = QTableWidget()
         self.tableWidget.setMinimumWidth(500)
         self.tableWidget.setMinimumHeight(500)

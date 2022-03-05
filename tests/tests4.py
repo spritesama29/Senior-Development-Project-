@@ -17,7 +17,7 @@ def test_orderedDataTest():
 
     # This test shows that the data is ordered by biggest rankUpDown to lowest by asserting that 34 is at the top
     # This test shows that the data is ordered by rank by asserting that the highest rank, 2, is at the top
-    assert tv[0][1] == 2
+    assert tv2[0][1] == 2
     assert tv[0][2] == 34
 
 

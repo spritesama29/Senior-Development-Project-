@@ -24,7 +24,7 @@ class ratingsTable(QWidget):
         self.tableWidget.setMinimumHeight(500)
         self.tableWidget.setRowCount(1)
         self.tableWidget.setColumnCount(23)
-        self.tableWidget.setHorizontalHeaderLabels(["1","2","3","4"])
+        self.tableWidget.setHorizontalHeaderLabels(["1", "2", "3", "4"])
         for i in range(100):
             self.tableWidget.setItem(i, 0, QTableWidgetItem(str(tv[i][0])))
             self.tableWidget.setItem(i, 1, QTableWidgetItem(str(tv[i][1])))

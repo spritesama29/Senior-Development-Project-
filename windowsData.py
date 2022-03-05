@@ -4,7 +4,6 @@ import pyqtgraph as pg
 import main
 import tvTable
 
-import windowsData
 import movieWindow
 
 
@@ -29,11 +28,11 @@ class dataWindow(QWidget):
         movieButton.move(50, 125)
         graphButton = QPushButton("I'd like to see a graph comparing TV and Movie rankUpDowns", self)
         graphButton.move(50, 225)
-        tvMerge = QPushButton("I'd like to see how many shows are in both popularTV and the top 250 shows",self)
+        tvMerge = QPushButton("I'd like to see how many shows are in both popularTV and the top 250 shows", self)
         tvMerge.move(25, 325)
         movieMerge = QPushButton("I'd like to see how many movies are both in popularMovies and the top 250 "
                                  "movies", self)
-        movieMerge.move(25,425)
+        movieMerge.move(25, 425)
         tvMerge.clicked.connect(self.tvMerge)
         movieMerge.clicked.connect(self.movMerge)
         tvButton.clicked.connect(self.tvTime)
@@ -64,7 +63,6 @@ class dataWindow(QWidget):
         messageBox.setMinimumWidth(400)
         messageBox.setWindowTitle("Relatable tv titles")
         messageBox.show()
-
 
     def tvTime(self):
         self.tvWindows = tvTable.tvTable()

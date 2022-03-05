@@ -227,11 +227,8 @@ def orderRankUpDownMOV(num, tv):
                 elif char.isdigit():
                     if char != ",":
                         newNum = newNum + char
-            try:
+            rankList[((tv.get("items"))[i]).get("id")] = int(newNum)
 
-                rankList[((tv.get("items"))[i]).get("id")] = int(newNum)
-            except Exception:
-                rankList[((tv.get("items"))[i]).get("id")] = "0"
 
     sortedList = sorted(rankList.items(), key=lambda t: t[1])
 
@@ -557,7 +554,7 @@ def main():
 
     addPopMOV(cursor, popMov)
 
-    dic = orderRankUpDownMOV(100, mov)
+    dic = orderRankUpDownMOV(100, popMov)
     negChange = getUserRatings(dic[0][0])
     posChange3 = getUserRatings(dic[97][0])
     posChange2 = getUserRatings(dic[98][0])
