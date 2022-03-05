@@ -452,51 +452,47 @@ def getMOVjoin(cursor: sqlite3.Cursor):
     a = cursor.execute(q)
     return a.fetchall()
 
-
-def getGraphCoords(cursor: sqlite3.Cursor, tv, mov, type):
-
+def graphPosTVAxis(tv):
     posTVAxis = []
+    for n in range(len(tv)):
+        posTVAxis.insert(n, 1)
+    return posTVAxis
+def graphNegTVAxis(tv):
     negTVAxis = []
+    for o in range(len(tv)):
+        negTVAxis.insert(o, 3)
+    return negTVAxis
+def graphPosMOVAxis(mov):
     posMOVAxis = []
+    for p in range(len(mov)):
+        posMOVAxis.insert(p, 5)
+    return posMOVAxis
+
+def graphNegMOVAxis(mov):
     negMOVAxis = []
+    for q in range(len(mov)):
+        negMOVAxis.insert(q, 7)
+    return negMOVAxis
+def graphPosTVlen(tv):
     posTVlen = []
+    for j in range(len(tv)):
+        posTVlen.insert(j, j)
+    return posTVlen
+def graphNegTVlen(tv):
     negTVlen = []
+    for k in range(len(tv)):
+        negTVlen.insert(k, k)
+    return negTVlen
+def graphPosMOVlen(mov):
     posMOVlen = []
+    for l1 in range(len(mov)):
+        posMOVlen.insert(l1, l1)
+    return posMOVlen
+def graphnegMOVlen(mov):
     negMOVlen = []
-
-    if type == "posTVlen":
-        for j in range(len(tv)):
-            posTVlen.insert(j, j)
-        return posTVlen
-    elif type == "posTVAxis":
-        for n in range(len(tv)):
-            posTVAxis.insert(n, 1)
-        return posTVAxis
-    elif type == "negTVlen":
-        for k in range(len(tv)):
-            negTVlen.insert(k, k)
-        return negTVlen
-    elif type == "negTVAxis":
-        for o in range(len(tv)):
-            negTVAxis.insert(o, 3)
-        return negTVAxis
-    elif type == "posMOVlen":
-        for l1 in range(len(mov)):
-            posMOVlen.insert(l1, l1)
-        return posMOVlen
-    elif type == "posMOVAxis":
-        for p in range(len(mov)):
-            posMOVAxis.insert(p, 5)
-        return posMOVAxis
-    elif type == "negMOVlen":
-        for m in range(len(mov)):
-            negMOVlen.insert(m, m)
-        return negMOVlen
-    elif type == "negMOVAxis":
-        for q in range(len(mov)):
-            negMOVAxis.insert(q, 7)
-        return negMOVAxis
-
+    for m in range(len(mov)):
+        negMOVlen.insert(m, m)
+    return negMOVlen
 
 def posAndNegSort(tv, mov, type):
     posTV = []

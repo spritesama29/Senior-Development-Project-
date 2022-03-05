@@ -6,7 +6,8 @@ import windows
 
 def display_data(data: list):
     qt_app = PySide6.QtWidgets.QApplication(sys.argv)  # sys.argv is the list of command line arguments
-    windows.guiWindow()
+    my_window = windows.guiWindow()
+    my_window.show()
     sys.exit(qt_app.exec())
 
 

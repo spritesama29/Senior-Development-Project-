@@ -23,7 +23,7 @@ def test_orderedDataTest():
 
 def test_posAndNegMovers():
     testData = [["random", "rank", 1], ["random", "rank", 2], ["random", "rank", -1]]
-    posPull = main.posAndNegSort(testData,testData, "posMOV")
+    posPull = main.posAndNegSort(testData, testData, "posMOV")
     negPull = main.posAndNegSort(testData, testData, "negMOV")
     # This test takes in data and sorts it by a positive or negative ranking.
     # This then checks that there are 2 pos numbs and 1 neg num in their respective lists based on rank up down

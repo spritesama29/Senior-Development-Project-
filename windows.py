@@ -38,7 +38,7 @@ class guiWindow(QWidget):
             main.orderBy(self.cursor, "tv")
             self.windows = windowsData.dataWindow()
             self.windows.show()
-        except:
+        except Exception:
             messageBox = QMessageBox(self)
             messageBox.setText("Seems like there is no data! \n Have you tried pressing the update data Button?")
             messageBox.show()
