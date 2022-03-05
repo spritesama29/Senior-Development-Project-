@@ -1,10 +1,7 @@
 from PySide6.QtWidgets import QWidget, \
-    QPushButton, QListWidget, QApplication, QListWidgetItem, QMessageBox, QTableWidget, QTableWidgetItem, QVBoxLayout
-
-
+    QPushButton, QMessageBox, QTableWidget, QTableWidgetItem
 
 import main
-import windowsData
 
 
 class movieWindow(QWidget):

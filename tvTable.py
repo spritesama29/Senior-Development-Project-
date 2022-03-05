@@ -22,8 +22,8 @@ class tvTable(QWidget):
         tvRanking.move(50, 100)
         tvRankUpDown = QPushButton("Make a popular table ordered by how much their popularity \n fluctuates", self)
         tvRankUpDown.move(50, 200)
-        tv250Table = QPushButton("Make a table showing the top 250 TV Shows!",self)
-        tv250Table.move(50,300)
+        tv250Table = QPushButton("Make a table showing the top 250 TV Shows!", self)
+        tv250Table.move(50, 300)
         quit_button = QPushButton("Go back", self)
         quit_button.clicked.connect(self.hide)
         quit_button.move(50, 400)
@@ -48,7 +48,7 @@ class tvTable(QWidget):
 
     def tvTableTimeUpDown(self):
         self.conn, self.cursor = main.open_db("demo_db.sqlite")
-        tv = main.orderBy(self.cursor,"tv")
+        tv = main.orderBy(self.cursor, "tv")
         self.tableWidget = QTableWidget()
         self.tableWidget.setMinimumWidth(500)
         self.tableWidget.setMinimumHeight(500)
@@ -72,7 +72,7 @@ class tvTable(QWidget):
 
     def tvTableTimeRanking(self):
         self.conn, self.cursor = main.open_db("demo_db.sqlite")
-        tv = main.rankBy(self.cursor,"tv")
+        tv = main.rankBy(self.cursor, "tv")
         self.tableWidget = QTableWidget()
         self.tableWidget.setMinimumWidth(500)
         self.tableWidget.setMinimumHeight(500)
@@ -102,7 +102,8 @@ class tvTable(QWidget):
         self.tableWidget.setMinimumHeight(700)
         self.tableWidget.setRowCount(250)
         self.tableWidget.setColumnCount(8)
-        self.tableWidget.setHorizontalHeaderLabels(["ID", "Ranking", "Title","fullTitle","year","crew","rating","ratingCount"])
+        self.tableWidget.setHorizontalHeaderLabels(["ID", "Ranking", "Title", "fullTitle", "year", "crew", "rating",
+                                                    "ratingCount"])
         for i in range(250):
             self.tableWidget.setItem(i, 0, QTableWidgetItem(str(tv[i][0])))
             self.tableWidget.setItem(i, 1, QTableWidgetItem(str(tv[i][1])))
@@ -116,4 +117,3 @@ class tvTable(QWidget):
         self.tableWidget.show()
         self.tableWidget.setEditTriggers(QTableWidget.NoEditTriggers)
         self.tableWidget.currentItemChanged.connect(self.ratingsDisplay)
-

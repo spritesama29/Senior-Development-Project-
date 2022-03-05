@@ -214,7 +214,7 @@ def orderRankUpDownMOV(num, tv):
         num = str(((tv.get("items"))[i]).get("rankUpDown"))
         newNum = ""
 
-        if num == None:
+        if num is None:
             rankList[((tv.get("items"))[i]).get("id")] = 0
         elif num == '':
             rankList[((tv.get("items"))[i]).get("id")] = 0
@@ -230,7 +230,7 @@ def orderRankUpDownMOV(num, tv):
             try:
 
                 rankList[((tv.get("items"))[i]).get("id")] = int(newNum)
-            except:
+            except Exception:
                 rankList[((tv.get("items"))[i]).get("id")] = "0"
 
     sortedList = sorted(rankList.items(), key=lambda t: t[1])
@@ -415,7 +415,7 @@ def orderByASCMOV(cursor: sqlite3.Cursor):
     return a.fetchall()
 
 
-def orderBy(cursor: sqlite3.Cursor,type):
+def orderBy(cursor: sqlite3.Cursor, type):
     if type == "mov":
         q = "SELECT * FROM popularMOV ORDER BY rankUpDown DESC"
         a = cursor.execute(q)
@@ -427,7 +427,7 @@ def orderBy(cursor: sqlite3.Cursor,type):
 
 
 def rankBy(cursor: sqlite3.Cursor, type):
-    if type=="mov":
+    if type == "mov":
         q = "SELECT * FROM popularMOV ORDER BY rank ASC "
         a = cursor.execute(q)
         return a.fetchall()
@@ -467,10 +467,7 @@ def getGraphCoords(cursor: sqlite3.Cursor, tv, mov, type):
     negTVlen = []
     posMOVlen = []
     negMOVlen = []
-    posTV = []
-    negTV = []
-    posMOV = []
-    negMOV = []
+
     if type == "posTVlen":
         for j in range(len(tv)):
             posTVlen.insert(j, j)
@@ -488,8 +485,8 @@ def getGraphCoords(cursor: sqlite3.Cursor, tv, mov, type):
             negTVAxis.insert(o, 3)
         return negTVAxis
     elif type == "posMOVlen":
-        for l in range(len(mov)):
-            posMOVlen.insert(l, l)
+        for l1 in range(len(mov)):
+            posMOVlen.insert(l1, l1)
         return posMOVlen
     elif type == "posMOVAxis":
         for p in range(len(mov)):
@@ -505,7 +502,7 @@ def getGraphCoords(cursor: sqlite3.Cursor, tv, mov, type):
         return negMOVAxis
 
 
-def posAndNegSort(tv,mov,type):
+def posAndNegSort(tv, mov, type):
     posTV = []
     negTV = []
     posMOV = []

@@ -1,5 +1,6 @@
 import main
-import windowsData
+
+
 def test_orderedDataTest():
     conn, cursor = main.open_db("otherTestData.sqlite")
     main.setup_db(cursor)
@@ -7,17 +8,18 @@ def test_orderedDataTest():
     q = "INSERT INTO popularTV(show_id,rank,rankUpDown,title,full_title,year,crew,imdb_rating,rating_count) " \
         "VALUES (?,?,?,?,?,?,?,?,?)"
 
-    cursor.execute(q, ("i", 3,23,"one1","one","2022","Obama","100.4","12345"))
-    cursor.execute(q, ("3", 2, 34, "one1","one", "2022", "Obama", "100.4", "12345"))
-    cursor.execute(q, ("5", 4, 1, "one1", "one","2022", "Obama", "100.4", "12345"))
-    cursor.execute(q, ("7", 5, -1, "one1", "one","2022", "Obama", "100.4", "12345"))
+    cursor.execute(q, ("i", 3, 23, "one1", "one", "2022", "Obama", "100.4", "12345"))
+    cursor.execute(q, ("3", 2, 34, "one1", "one", "2022", "Obama", "100.4", "12345"))
+    cursor.execute(q, ("5", 4, 1, "one1", "one", "2022", "Obama", "100.4", "12345"))
+    cursor.execute(q, ("7", 5, -1, "one1", "one", "2022", "Obama", "100.4", "12345"))
     tv = main.orderBy(cursor, "tv")
-    tv2 = main.rankBy(cursor,"tv")
+    tv2 = main.rankBy(cursor, "tv")
 
     # This test shows that the data is ordered by biggest rankUpDown to lowest by asserting that 34 is at the top
     # This test shows that the data is ordered by rank by asserting that the highest rank, 2, is at the top
     assert tv[0][1] == 2
     assert tv[0][2] == 34
+
 
 def test_posAndNegMovers():
     testData = [["random", "rank", 1], ["random", "rank", 2], ["random", "rank", -1]]
@@ -28,6 +30,7 @@ def test_posAndNegMovers():
 
     assert len(posPull) == 2
     assert len(negPull) == 1
+
 
 def test_crossOvers():
     conn, cursor = main.open_db("otherTestData.sqlite")
