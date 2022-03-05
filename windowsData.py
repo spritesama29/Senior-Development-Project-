@@ -45,7 +45,7 @@ class dataWindow(QWidget):
         tv = main.getTVjoin(self.cursor)
         tvString = ""
         for tvNum in range(len(tv)):
-            tvString+='ImDbId: %s   Title: %s \n' % (tv[tvNum][0],tv[tvNum][1])
+            tvString += 'ImDbId: %s   Title: %s \n' % (tv[tvNum][0], tv[tvNum][1])
         messageBox = QMessageBox(self)
         messageBox.setText(tvString)
         messageBox.setMinimumWidth(400)
@@ -57,7 +57,7 @@ class dataWindow(QWidget):
         mov = main.getMOVjoin(self.cursor)
         tvString = ""
         for tvNum in range(len(mov)):
-            tvString+='ImDbId: %s   Title: %s \n' % (mov[tvNum][0],mov[tvNum][1])
+            tvString += 'ImDbId: %s   Title: %s \n' % (mov[tvNum][0], mov[tvNum][1])
         messageBox = QMessageBox(self)
         messageBox.setText(tvString)
         messageBox.setMinimumWidth(400)

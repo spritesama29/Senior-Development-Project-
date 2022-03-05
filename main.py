@@ -229,7 +229,6 @@ def orderRankUpDownMOV(num, tv):
                         newNum = newNum + char
             rankList[((tv.get("items"))[i]).get("id")] = int(newNum)
 
-
     sortedList = sorted(rankList.items(), key=lambda t: t[1])
 
     return sortedList
